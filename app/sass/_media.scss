@@ -2,218 +2,58 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
+@media only screen and (max-width: 1360px) {
+  html {
+    font-size: .8rem;
+  }
+  .logo {
+    &-text {
+      /* font-size: 1.3rem;*/
+    }
+    &-wrapper {
+      width: 100px;
+    }
+    .h1 {
+      margin-top: 100px;
+    }
+  }
+   .navigation{
+     &-link{
+       font-size: 1.3rem;
+     }
+   }
+  .about{
+    &-text{
+      font-size: 1.3rem;
+    }
+  }
+  .our_qualities{
+    &-link{
+      font-size: 1.3rem;
+    }
+  }
+}
 
-@media only screen and (max-width: 1200px){
-  .top-carousel .carousel-caption {
-    .h1{
-      font-size: 82px;
-    }
-    p{
-      font-size: 16px;
-    }
-  }
-  .selected p {
-    font-size: 19px;
-  }
-  .s-compare {
-    padding-top: 60px;
-  }
+@media only screen and (max-width: 1200px) {
+
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px){
-  .top-carousel .carousel-caption {
-    .h1{
-      font-size: 64px;
-    }
-    p{
-      font-size: 14px;
-      width: 80%;
-    }
-  }
-  .selected {
-    top: 100%;
-    background-color: #fff;
-    position: relative;
-  }
-  .top-carousel .carousel-caption {
-    top: 33%;
-  }
-  .s-popular {
-    padding: 40px 0;
-  }
-  .s-works{
-    .point-decorator{
-      top: 75px;
-    }
-  }
+
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px){
-  .top-carousel .carousel-caption {
-    .h1{
-      font-size: 48px;
-    }
-    p{
-      font-size: 15px;
-    }
-  }
 
-  .selected {
-    top: 100%;
-    &-control{
-      box-shadow: none;
-    }
-    p{
-      font-size: 18px;
-    }
-  }
-  .top-carousel .carousel-caption {
-    top: 33%;
-  }
-  .top-line .top-logo {
-    padding-left: 15px;
-  }
-  .top-line .auth {
-    padding-right: 15px;
-  }
-  .top-line .top-logo {
-    width: 140px;
-  }
-  .select-btn{
-    margin-bottom: 15px;
-  }
-  .dropdown-menu {
-   top: 76%;
-  }
-  .flex{
-    display: block;
-  }
-  .footer{
-    .footer-first{
-      display: none!important;
-    }
-  }
-  .m-logo{
-    display: block;
-  }
-  .footer {
-    padding: 40px 0;
-    .h4{
-      margin-top: 15px;
-    }
-    .list{
-      margin-top: 20px;
-    }
-  }
-  .my-col{
-    .h4{
-      margin-top: 25px!important;
-      text-align: center;
-    }
-    .list{
-      width: 50%;
-      margin: auto;
-    }
-  }
-  .s-works{
-    .icon-wrapper {
-      width: 35px;
-      height: 35px;
-      flex-basis: 35px;
-
-    }
-    .arrow-three{
-      left: 13px;
-    }
-    .icon-wrapper .number {
-      top: -23px;
-      font-size: 22px;
-    }
-    }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px){
-  .top-carousel .carousel-caption {
-    .h1{
-      font-size: 32px;
-    }
-    p{
-      font-size: 10px;
-    }
-  }
-  .auth{
-    display: none;
-    top: 100px !important;
-
-  }
-  .hamburger{
-    display: block;
-  }
-  .s-works{
-    padding: 70px 0 110px;
-
-    .h2{
-      padding-bottom: 20px;
-    }
-    .h3{
-      font-size: 18px;
-    }
-    .text{
-      font-size: 14px;
-    }
-    .s-works .icon-wrapper {
-      width: 35px;
-      height: 35px;
-    }
-  }
 
 }
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px){
-  .top-carousel .carousel-caption {
-    .h1{
-      font-size: 24px;
-    }
-    p{
-      font-size: 10px;
-      display: block;
-      width: 200px;
-    }
-  }
-  .s-works{
-    padding: 70px 0 110px;
-
-    .h2{
-      font-size: 37px;
-      padding-bottom: 16px;
-    }
-    .h3{
-      font-size: 14px;
-    }
-    .text{
-      font-size: 11px;
-      margin-left: 8px;
-    }
-    .icon-wrapper {
-      width: 35px;
-      height: 35px;
-      img{
-        height: 90%;
-      }
-    }
-    .icon-wrapper .number {
-      left: -21px;
-      top: -24px;
-      font-size: 20px;
-    }
-    .arrow-three{
-      left: 8px;
-    }
-
-  }
 
 }
 
