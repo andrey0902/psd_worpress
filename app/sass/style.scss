@@ -1,0 +1,127 @@
+@import "../../node_modules/reset-css/_reset";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min";
+@import "variables";
+@import "fonts";
+html,body{
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family:  helvetica, montserat, sans-serif;
+}
+
+a, a:hover, a:focus{
+  text-decoration: none;
+  cursor: pointer;
+}
+.h1{
+  margin: 0;
+  padding: 0;
+}
+.wrapper{
+  height: 100%;
+  overflow: hidden;
+}
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+.header-menu{
+  background-color: #296584;
+}
+
+.navigation{
+  &-list{
+    width: 100%;
+    padding:0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-item{
+    list-style-type: none;
+    display: block;
+  }
+  &-link{
+    padding: 10px 0;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: .3s ease;
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+.cat{
+  width: 500px;
+  border: 1px solid #5affda;
+  clear: both;
+  padding-top: 30px;
+
+}
+.circle{
+  float: left;
+  margin: 10px 30px 0;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.circle:nth-child(5n - 1) {
+  margin-left: 110px;
+}
+
+.circle {
+  margin-top: -30px;}
+.clear{
+  clear: both;
+}
+.clearfloat:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-top-line{
+  padding: 10px 0 16px;
+  border-bottom: 1px solid #c4c5c7;
+  background:  url(../img/header-bg.png) 10px top no-repeat,
+  url(../img/header-bg2.png) 96% top no-repeat;
+  background-color: $lightWhite;
+}
+.logo{
+  &-text{
+    font-family:  helvetica, montserat,sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  &-link{
+    display: inline-block;
+    float: left;
+
+  }
+  &-wrapper{
+    height: 158px;
+    width: 128px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  &-img{
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+  }
+  .h1{
+    color: $textDarkBlue;
+    font-size: 2rem;
+    font-weight: 300;
+    display: inline-block;
+    margin-top: 135px;
+  }
+}
