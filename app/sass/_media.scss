@@ -151,6 +151,18 @@
       padding-bottom: 50px;
     }
   }
+  /*___collect-tours____*/
+  .tour{
+    &-button{
+      display: block;
+      width: 80%;
+      margin: -32px auto 25px;
+    }
+    &-img-button{
+      max-width: 100%;
+      width: 100%;
+    }
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -170,6 +182,18 @@
       padding: 10px;
     }
   }
+  /*___collect-tours____*/
+  .tour{
+    &-button{
+      display: block;
+      width: 80%;
+      margin: -24px auto 25px;
+    }
+    &-img-button{
+      max-width: 100%;
+      width: 100%;
+    }
+  }
 }
 
 /* Custom, iPhone Retina */
@@ -187,6 +211,22 @@
       margin-top: 15px;
       white-space: normal;
       padding: 10px;
+    }
+  }
+  /*___collect-tours____*/
+  .tour{
+    &-wrapper-img{
+      width: 150px;
+      height: 150px;
+    }
+    &-button{
+      display: block;
+      width: 100%;
+      margin: -18px auto 25px;
+    }
+    &-img-button{
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
