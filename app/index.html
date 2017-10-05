@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Handle_Bars</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -14,150 +15,168 @@
     {{/list}}
 </script>
 
-    <div class="wrapper">
-        <header class="header">
-            <div class="header-top-line">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="header-logo logo">
-                                <a class="logo-link" href="/">
-                                    <p class="logo-text">
-                                        FAMILIA-Tours
-                                    </p>
-                                    <div class="logo-wrapper">
-                                        <img class="logo-img" src="img/logo.png" alt="logo">
-                                    </div>
-                                </a>
-                                <h1 class="h1">Семейные Туры Санкт_Петербург Москва</h1>
-                            </div>
+<div class="wrapper">
+    <header class="header">
+        <div class="header-top-line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="header-logo logo">
+                            <a class="logo-link" href="/">
+                                <p class="logo-text">
+                                    FAMILIA-Tours
+                                </p>
+                                <div class="logo-wrapper">
+                                    <img class="logo-img" src="img/logo.png" alt="logo">
+                                </div>
+                            </a>
+                            <h1 class="h1">Семейные Туры Санкт-Петербург Москва</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="header-menu">
-                <div class="container">
-                    <div class="row">
-                        <nav class="nav">
-                            <ul class="navigation-list">
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">О нас</a>
-                                </li>
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">Туры</a>
-                                </li>
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">Собери свой тур</a>
-                                </li>
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">Достопримечательности</a>
-                                </li>
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">Отзывы</a>
-                                </li>
-                                <li class="navigation-item">
-                                    <a href="#" class="navigation-link">Контакты</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="about-photo">
-                                <div class="about-wrapper">
-                                    <img src="img/girl.png" alt="" class="about-img">
-                                </div>
-                            </div>
+        </div>
+        <div class="header-menu">
+            <div class="container">
+                <div class="row">
+                    <nav class="nav">
+                        <div class="collapse">
+                            <button class="hamburger hamburger--slider " type="button">
+                              <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                              </span>
+                            </button>
                         </div>
-                        <div class="col-md-9 col-sm-9">
-                            <div class="about-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur iusto maiores
-                                minus, omnis rem saepe tempore. A ad architecto autem, ea eligendi harum incidunt
-                                itaque, minus, neque nisi optio reprehenderit?
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="our_qualities">
-                <div class="container">
-                    <div class="row">
-                        <ul class="our_qualities our_qualities-list">
-                            <li class="our_qualities-item">
-                                <div  class="our_qualities-link">
-                                <div class="our_qualities-wrapper">
-                                    <img src="img/ic1.jpg" alt="" class="our_qualities-img">
-                                </div>
-                                Семейность
-                            </div>
+                        <ul class="navigation-list">
+                            <li class="navigation-item">
+                                <a href="#" class="navigation-link">О нас</a>
                             </li>
-                            <li class="our_qualities-item"><div  class="our_qualities-link">
-                                <div class="our_qualities-wrapper">
-                                    <img src="img/ic2.jpg" alt="" class="our_qualities-img">
-                                </div>
-                                Безопастность
-                            </div>
+                            <li class="navigation-item">
+                                <a href="#" class="navigation-link">Туры</a>
                             </li>
-                            <li class="our_qualities-item"><div  class="our_qualities-link">
-                                <div class="our_qualities-wrapper">
-                                    <img src="img/ic3.jpg" alt="" class="our_qualities-img">
-                                </div>
-                                Визы
-                            </div>
+                            <li class="navigation-item">
+                                <a href="#" class="navigation-link">Собери свой тур</a>
                             </li>
-                            <li class="our_qualities-item"><div  class="our_qualities-link">
-                                <div class="our_qualities-wrapper">
-                                    <img src="img/ic4.jpg" alt="" class="our_qualities-img">
-                                </div>
-                                Поддержка
-                            </div>
+                            <li class="navigation-item">
+                                <a href="#" class="navigation-link">Достопримечательности</a>
                             </li>
-                            <li class="our_qualities-item">
-                                <div  class="our_qualities-link">
-                                <div class="our_qualities-wrapper">
-                                    <img src="img/ic5.jpg" alt="" class="our_qualities-img">
-                                </div>
-                                Лучшие гиды
-                            </div>
+                            <li class="navigation-item">
+                                <a href="#" class="navigation-link">Отзывы</a>
+                            </li>
+                            <li class="navigation-item nested-arrow">
+                                <span class="navigation-link">Контакты</span>
+                                <ul class="drop-menu">
+                                    <li class="drop-item"><a href="#" class="drop-link">Обратная связь на самом сайте</a></li>
+                                    <li class="drop-item"><a href="#" class="drop-link icon">
+                                        <div class="icon-wrapper">
+                                            <img src="img/whats.png" alt="icon" class="icon-img">
+                                        </div>
+                                        Whats App
+                                    </a></li>
+                                    <li class="drop-item"><a href="#" class="drop-link icon">
+                                        <div class="icon-wrapper">
+                                            <img src="img/whats.png" alt="icon" class="icon-img">
+                                        </div>
+                                        Номер телефона
+                                    </a></li>
+                                    <li class="drop-item"><a href="#" class="drop-link icon">
+                                        <div class="icon-wrapper">
+                                            <img src="img/whats.png" alt="icon" class="icon-img">
+                                        </div>
+                                        E-mail
+                                    </a></li>
+                                </ul>
                             </li>
                         </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-4">
+                        <div class="about-photo">
+                            <div class="about-wrapper">
+                                <img src="img/girl.png" alt="" class="about-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="about-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur iusto maiores
+                            minus, omnis rem saepe tempore. A ad architecto autem, ea eligendi harum incidunt
+                            itaque, minus, neque nisi optio reprehenderit?
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr>
-            <br>
+        </div>
+        <div class="our_qualities">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-xs-12">
+                         <ul class="our_qualities our_qualities-list">
+                             <li class="our_qualities-item">
+                                 <div  class="our_qualities-link">
+                                     <div class="our_qualities-wrapper">
+                                         <img src="img/ic1.jpg" alt="" class="our_qualities-img">
+                                     </div>
+                                     Семейность
+                                 </div>
+                             </li>
+                             <li class="our_qualities-item"><div  class="our_qualities-link">
+                                 <div class="our_qualities-wrapper">
+                                     <img src="img/ic2.jpg" alt="" class="our_qualities-img">
+                                 </div>
+                                 Безопастность
+                             </div>
+                             </li>
+                             <li class="our_qualities-item"><div  class="our_qualities-link">
+                                 <div class="our_qualities-wrapper">
+                                     <img src="img/ic3.jpg" alt="" class="our_qualities-img">
+                                 </div>
+                                 Визы
+                             </div>
+                             </li>
+                             <li class="our_qualities-item"><div  class="our_qualities-link">
+                                 <div class="our_qualities-wrapper">
+                                     <img src="img/ic4.jpg" alt="" class="our_qualities-img">
+                                 </div>
+                                 Поддержка
+                             </div>
+                             </li>
+                             <li class="our_qualities-item">
+                                 <div  class="our_qualities-link">
+                                     <div class="our_qualities-wrapper">
+                                         <img src="img/ic5.jpg" alt="" class="our_qualities-img">
+                                     </div>
+                                     Лучшие гиды
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
 
-            <div class="header-menu">
-                <div class="container">
-                    <div class="row">
-                        <nav class="nav-1">
-
-                        </nav>
-                    </div>
+    </header>
+    <!--
+            <section class="last">
+                <div class="cat clearfloat">
+                    <div class="circle "></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
-            </div>
+            </section>-->
 
-        </header>
-
-        <section class="last">
-            <div class="cat clearfloat">
-                <div class="circle "></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
-        </section>
-
-    </div>
-    <footer class="footer">
-        aaaaa
-    </footer>
+</div>
+<footer class="footer">
+    aaaaa
+</footer>
 
 <script src="js/common.min.js"></script>
 </body>

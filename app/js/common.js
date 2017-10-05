@@ -43,6 +43,17 @@ $(document).ready(function()  {
        $(circle[i]).addClass('left')
     }
 
+    $('.hamburger').on('click', function () {
+        $(this).toggleClass('is-active');
+        $('.navigation-list').toggleClass('display');
+    });
+    $(window).on('resize', function () {
+        equalWidth();
+    });
 
-
+    function equalWidth() {
+        var width = $('.about-wrapper').outerWidth();
+        $('.about-img').css('height', width);
+    }
+    equalWidth();
 });

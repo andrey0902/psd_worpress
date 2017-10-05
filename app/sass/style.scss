@@ -1,6 +1,7 @@
 @import "../../node_modules/reset-css/_reset";
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min";
 @import "variables";
+@import "../libs/css-hamburgers/hamburgers";
 @import "fonts";
 html,body{
   min-height: 100%;
@@ -12,7 +13,11 @@ html,body{
 
 a, a:hover, a:focus{
   text-decoration: none;
+  outline: none;
   cursor: pointer;
+}
+button, button:hover, button:focus{
+  outline: none;
 }
 .h1{
   margin: 0;
@@ -20,73 +25,8 @@ a, a:hover, a:focus{
 }
 .wrapper{
   height: 100%;
-  overflow: hidden;
-}
-.container{
-  width: 960px;
-  margin: 0 auto;
-}
-.header-menu{
-  background-color: #296584;
 }
 
-.navigation{
-  &-list{
-    width: 100%;
-    padding:0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &-item{
-    list-style-type: none;
-    display: block;
-  }
-  &-link{
-    padding: 10px 0;
-    cursor: pointer;
-    display: block;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 300;
-    transition: .3s ease;
-    &:hover{
-      color: red;
-    }
-  }
-}
-
-.cat{
-  width: 500px;
-  border: 1px solid #5affda;
-  clear: both;
-  padding-top: 30px;
-
-}
-.circle{
-  float: left;
-  margin: 10px 30px 0;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 50%;
-  box-sizing: border-box;
-}
-.circle:nth-child(5n - 1) {
-  margin-left: 110px;
-}
-
-.circle {
-  margin-top: -30px;}
-.clear{
-  clear: both;
-}
-.clearfloat:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 .header-top-line{
   padding: 10px 0 16px;
@@ -94,7 +34,7 @@ a, a:hover, a:focus{
   background:  url(../img/header-bg.png) 10px center no-repeat,
   url(../img/header-bg2.png) 96% center no-repeat;
   background-color: $lightWhite;
-  background-size: 17% auto;
+  background-size: 19% auto;
 }
 .logo{
   &-text{
@@ -126,17 +66,109 @@ a, a:hover, a:focus{
     display: inline-block;
     margin-top: 135px;
     white-space: nowrap;
+    word-wrap: normal;
+  }
+}
+.header-menu{
+  background-color: $darkBlue;
+}
+.collapse{
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 15px;
+  &-text{
+    font-size: 1rem;
+    color: $lightWhite;
+  }
+}
+.nav{
+  position: relative;
+}
+.navigation{
+  &-list{
+    width: 100%;
+    padding:0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-item{
+    position: relative;
+    list-style-type: none;
+    &:hover .drop-menu{
+      opacity: 1;
+    }
+  }
+  &-link{
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: .3s ease;
+    &:hover{
+      color: red;
+    }
+  }
+}
+.drop{
+  &-menu{
+    background-color: $lightWhite;
+    opacity: 0;
+    position: absolute;
+    width: 280px;
+    top: 99%;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    transition: .2s linear;
+    z-index: 10;
+  }
+  &-item{
+    list-style-type: none;
+    width: 100%;
+    color:$textDarkBlue;
+    font-size: 1rem;
+  }
+  &-link{
+    width: 100%;
+    padding: 10px 30px;
+    display: block;
+    transition: .3s ease;
+    &:hover{
+      color: $lightWhite;
+      background-color: rgba(0, 0, 0, 0.11);
+    }
+  }
+
+}
+.icon{
+  display: flex;
+  align-items: center;
+  &-wrapper{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  &-img{
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 }
 .about{
   background-color: $backgroundColor;
   &-photo{
-    padding-top: 30px;
+    padding: 30px 0 10px;
   }
   &-wrapper{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 100%;
     overflow: hidden;
   }
   &-img{
@@ -156,7 +188,7 @@ a, a:hover, a:focus{
     background-color: $lightWhite;
     border-right: 1px solid #c8c9cb;
     border-left: 1px solid #c8c9cb;
-    padding: 0;
+    padding: 0 15px;
     margin: 40px 0 35px;
     text-align: justify;
     &:after{
@@ -173,7 +205,7 @@ a, a:hover, a:focus{
 
   }
   &-link{
-    padding: 10px 0 50px 0;
+    padding: 10px 0 80px 0;
     display: inline-block;
     position: relative;
     color:$yellowColor;
@@ -184,8 +216,8 @@ a, a:hover, a:focus{
     position: absolute;
     left: 50%;
     bottom: 0;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     overflow: hidden;
     display: block;
     transform: translateX(-50%);
@@ -196,4 +228,39 @@ a, a:hover, a:focus{
     width: 100%;
   }
 }
+.display{
+  display: flex!important;
+}
 @import "media";
+
+
+.cat{
+  width: 500px;
+  border: 1px solid #5affda;
+  clear: both;
+  padding-top: 30px;
+
+}
+.circle{
+  float: left;
+  margin: 10px 30px 0;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.circle:nth-child(5n - 1) {
+  margin-left: 110px;
+}
+
+.circle {
+  margin-top: -30px;}
+.clear{
+  clear: both;
+}
+.clearfloat:after {
+  content: "";
+  display: table;
+  clear: both;
+}
