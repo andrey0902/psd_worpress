@@ -3,6 +3,8 @@
 @import "variables";
 @import "../libs/css-hamburgers/hamburgers";
 @import "../libs/scroll/jquery.mCustomScrollbar.min";
+@import "../libs/slick-1.8.0/slick/slick.css";
+@import "../libs/slick-1.8.0/slick/slick-theme.css";
 @import "fonts";
 html,body{
   min-height: 100%;
@@ -607,4 +609,64 @@ input::-webkit-inner-spin-button {
   content: "";
   clear: both;
 }
+
+
+/*______main-content______*/
+.main-content{
+  background-color: $backgroundColor;
+  padding: 30px 0 50px;
+}
+/*______carousel______*/
+.your-class{
+  .item{
+  height: 480px;
+    position: relative;
+    img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .carousel-caption{
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+.review{
+  width: 315px;
+  height: 155px;
+  background-color: rgba(255, 255, 255, 0.31);
+  float: right;
+  .point{
+    height: 20px;
+    width: 20px;
+    margin-right: 2px;
+    background-color: white;
+    border: 2px solid green;
+    float: left;
+    position: relative;
+    border-radius: 50%;
+    &:after{
+      position: absolute;
+      content: '';
+      display: block;
+      height: 12px;
+      width: 12px;
+      background-color: green;
+      border-radius: 50%;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+    }
+    &-title{
+      text-align: left;
+    }
+  }
+
+}
+
+
 @import "media";

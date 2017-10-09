@@ -21,6 +21,7 @@ gulp.task('common-js', function() {
         'app/libs/handlebars.js',
         'app/libs/scroll/jquery.mCustomScrollbar.concat.min.js',
 		'node_modules/bootstrap/dist/js/bootstrap.js',
+		'app/libs/slick-1.8.0/slick/slick.js',
 		'app/js/common.js',
 		])
 	.pipe(concat('common.min.js'))
