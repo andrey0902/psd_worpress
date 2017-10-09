@@ -19,6 +19,7 @@ gulp.task('common-js', function() {
 	return gulp.src([
 		'app/libs/jquery-3.2.1.min.js',
         'app/libs/handlebars.js',
+        'app/libs/scroll/jquery.mCustomScrollbar.concat.min.js',
 		'node_modules/bootstrap/dist/js/bootstrap.js',
 		'app/js/common.js',
 		])

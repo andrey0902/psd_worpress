@@ -2,6 +2,7 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min";
 @import "variables";
 @import "../libs/css-hamburgers/hamburgers";
+@import "../libs/scroll/jquery.mCustomScrollbar.min";
 @import "fonts";
 html,body{
   min-height: 100%;
@@ -19,6 +20,12 @@ a, a:hover, a:focus{
 button, button:hover, button:focus{
   outline: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 .h1{
   margin: 0;
   padding: 0;
@@ -35,12 +42,25 @@ button, button:hover, button:focus{
   url(../img/header-bg2.png) 96% center no-repeat;
   background-color: $lightWhite;
   background-size: 19% auto;
+  .h1{
+    color: $textDarkBlue;
+    font-size: 2rem;
+    font-weight: 300;
+    display: inline-block;
+    margin-top: 135px;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
 }
 .logo{
+  max-width: 250px;
   &-text{
+    display: inline-block;
     font-family:  helvetica, montserat,sans-serif;
     font-size: 2rem;
     margin: 0;
+    width: 100%;
+    text-align: center;
     font-weight: 300;
   }
   &-link{
@@ -59,15 +79,7 @@ button, button:hover, button:focus{
     max-height: 100%;
     width: 100%;
   }
-  .h1{
-    color: $textDarkBlue;
-    font-size: 2rem;
-    font-weight: 300;
-    display: inline-block;
-    margin-top: 135px;
-    white-space: nowrap;
-    word-wrap: normal;
-  }
+
 }
 .header-menu{
   background-color: $darkBlue;
@@ -228,9 +240,7 @@ button, button:hover, button:focus{
     width: 100%;
   }
 }
-.display{
-  display: flex!important;
-}
+
 /*_collect-tours_*/
 .collect-tours{
   background-color: $backgroundColor;
@@ -250,30 +260,238 @@ button, button:hover, button:focus{
   }
 }
 .tour{
+  background-color: $backgroundColor;
   &-wrapper-img{
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    position: relative;
     background-color: $lightWhite;
     border: 3px solid $lightWhite;
     box-shadow: 0 0 0 2px #00bbf0;
     overflow: hidden;
     margin: 15px auto 0;
+    cursor: pointer;
+    &:hover img{
+      opacity: .7;
+    }
   }
   &-img{
-    display: inline-block;
     object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
     height: 100%;
+    transition: .3s ease;
   }
   &-button{
     display: table;
+    cursor: pointer;
     margin: -36px auto 25px;
+    transition: .2s ease;
+    &:hover{
+      opacity: .7;
+    }
   }
 }
+/*______cart_______*/
 
-@import "media";
+.cart{
+  background-color: $backgroundColor;
+  padding: 40px 0 150px;
+  &-selected{
+    border-bottom: 1px solid #d7d8d9;
+  }
+  &-amount{
+    display: flex;
+    align-items: center;
+  }
+  &-text{
+    float: left;
+    max-width: 35%;
+    margin-right: 10px;
+    padding: 2px;
+    color: $textDarkBlueTour;
+    font-size: 22px;
+    font-weight: 300;
+    font-variant: small-caps;
+    line-height: 1;
+  }
+  &-decrement,&-increment{
+    background-color: #fff;
+    color: $lightGreen;
+    border: 1px solid #e7e7e7;
+    height: 52px;
+    width: 52px;
+    display: inline-block;
+    vertical-align: middle;
+    &:hover{
+      box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 12px 30px 0 rgba(0,0,0,0.19);
+    }
+  }
+  &-decrement{
+    background: url("../img/min.png") no-repeat center;
+  }
+  &-increment{
+    background: url("../img/plus.png") no-repeat center;
+  }
+  .composition-icon{
+    height: 47px;
+    width: 22px;
+    overflow: hidden;
+    margin: 0 15px;
+  }
+  &-action{
+
+  }
+
+  &-amount{
+    padding: 20px;
+    background-color: #fff;
+  }
+  &-total{
+    margin-top: 22px;
+    background-color: #fff;
+  }
+}
+.total{
+  padding: 18px 12px;
+  &-text{
+    color: $textDarkBlueTour;
+    font-size: 22px;
+    font-weight: 300;
+    font-variant: small-caps;
+    line-height: 1;
+    text-align: center;
+  }
+  &-count{
+    color: $textDarkBlueTour;
+    font-size: 49px;
+    font-weight: 300;
+    display: table;
+    margin: 0 auto;
+    font-variant: small-caps;
+  }
+  .currency{
+    float: left;
+    margin-right: 20px;
+    &-wrapper{
+      float: left;
+      margin-right: 30px;
+    }
+  }
+  &-sum{
+    float: left;
+  }
+  &-plus{
+    float: left;
+    margin-right: 10px;
+  }
+  &-people-count{
+    display: inline-block;
+    font-size: 49px;
+    font-weight: 300;
+    font-variant: small-caps;
+    color: $lightGreen;
+    border: none;
+    width: 100%;
+    text-align: center;
+  }
+  &-people{
+    display: table;
+    line-height: .5;
+    text-align: center;
+    padding: 26px 0 10px;
+
+    span{
+      font-size: 21px;
+      font-weight: 300;
+    }
+  }
+
+}
+.selected{
+  height: 276px;
+  background: #fff;
+  &-title{
+    padding: 15px;
+    text-align: center;
+    color: $textDarkBlueTour;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 1px solid $lightGray;
+  }
+ &-tours{
+   padding: 7px;
+   height: 200px;
+   overflow: auto;
+   width: 91%;
+   margin: 0 auto;
+ }
+}
+.circle:hover .delete-tour{
+  opacity: .9;
+}
+.delete-tour{
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  transition: .3s ease;
+  padding-top: 2px;
+  top: 70%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-size: 12px;
+  z-index: 555;
+  background-color: darkred;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.callback-form{
+  border-top: 1px solid #d7d8d9;
+  border-bottom: 1px solid #d7d8d9;
+  margin: 30px 0;
+  padding: 25px 20px 15px;
+  background-color: #fff;
+
+  label{
+    color: $textDarkBlueTour;
+    font-size: 18px;
+  }
+  button{
+   text-transform: uppercase;
+    background-color: $lightGreen;
+    font-size: 33px;
+    color: $textDarkBlueTour;
+    transition: .3s ease;
+    width: 100%;
+    &:hover{
+      background-color: rgba(130, 198, 104, 0.88);
+      color: $textDarkBlueTour;
+    }
+  }
+}
+.mark-input{
+  color: red;
+  font-size: 17px;
+}
+.mCSB_container{
+  padding: 14px 0 10px 0;
+}
+.display{
+  display: flex!important;
+}
+.margin-right{
+  margin-right: 3px!important;
+}
+
 
 
 .cat{
@@ -285,24 +503,108 @@ button, button:hover, button:focus{
 }
 .circle{
   float: left;
-  margin: 10px 30px 0;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
+  margin: 10px 17px 0;
+  height: 90px;
+  width: 90px;
+  border: 1px solid #000;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  position: relative;
 }
 .circle:nth-child(5n - 1) {
-  margin-left: 110px;
+  margin-left: 80px;
 }
 
 .circle {
-  margin-top: -30px;}
+  margin-top: -10px;
+}
+
+/*______footer_______*/
+.footer{
+  color: $lightWhite;
+}
+/*______social______*/
+.social{
+  display: table;
+  margin: 0 auto;
+  padding: 3px 0;
+  &-list{
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  &-item{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+    &:last-child a{
+      background-color: #305181;
+      &:hover{
+        background-color: #3e78b6;
+      }
+    }
+
+    &:nth-child(2) a{
+      background-color: #00acdf;
+      &:hover{
+        background-color: #00c0f9;
+      }
+    }
+  }
+  &-link{
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: .2s ease;
+
+    img{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      object-fit: cover;
+    }
+  }
+  .fa.facebook:before{
+    border: none;
+    content:"\f09a";
+    color: #fff;
+    font: normal normal normal 44px/1 FontAwesome;
+    position: absolute;
+    right: 18px;
+    top: 43px;
+    transform: translate(-50%, -50%);
+
+  }
+  .fa.tw:before{
+    border: none;
+    content:"\f099";
+    color: #fff;
+    font: normal normal normal 44px/1 FontAwesome;
+    position: absolute;
+    right:0;
+    top: 43px;
+    transform: translate(-50%, -50%);
+
+  }
+
+}
 .clear{
   clear: both;
 }
 .clearfloat:after {
   content: "";
-  display: table;
   clear: both;
 }
+@import "media";

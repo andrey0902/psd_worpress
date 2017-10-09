@@ -5,12 +5,6 @@
   html {
     font-size: .8rem;
   }
-  .header-top-line {
-    background-size: 17% auto;
-    .h1 {
-      margin-top: 100px;
-    }
-  }
   .logo {
     &-text {
       /* font-size: 1.3rem;*/
@@ -18,7 +12,9 @@
     &-wrapper {
       width: 100px;
     }
-
+    .h1 {
+      margin-top: 100px;
+    }
   }
   .navigation {
     &-link {
@@ -35,19 +31,15 @@
       font-size: 1.3rem;
     }
   }
-
+  .header-top-line {
+    background-size: 17% auto;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
   .header-top-line {
     background: url(../img/header-bg2.png) 96% center no-repeat;
     background-size: 17% auto;
-  }
-  /*___collect-tours____*/
-  .callback-form{
-    button{
-      font-size: 20px;
-    }
   }
 }
 
@@ -58,45 +50,6 @@
     &-link{
       font-size: .9rem;
     }
-  }
-  /*______cart_______*/
-  .cart{
-    &-amount{
-      display: block;
-    }
-    &-text{
-      float: none;
-      text-align: center;
-      margin-bottom: 5px;
-      width: 100%;
-      max-width: 100%;
-    }
-    &-composition{
-      display: table;
-      margin: 0 auto;
-    }
-  }
-  .selected {
-    &-tours{
-      padding: 20px;
-      height: 200px;
-      overflow: auto;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-around;
-      display: flex;
-    }
-    .circle{
-      flex-basis: 90px;
-    }
-
-  }
-  .circle:nth-child(5n - 1) {
-    margin-left: 17px;
-  }
-
-  .circle {
-    margin-top: 15px;
   }
 }
 
@@ -210,32 +163,6 @@
       width: 100%;
     }
   }
-  /*______cart_______*/
-  .cart{
-    &-decrement,&-increment{
-      height: 40px;
-      width: 40px;
-    }
-  }
-  .total {
-    &-sum {
-      margin-right: 1px;
-      float: none;
-    }
-    .currency-wrapper{
-      float: none;
-      margin-right: 1px;
-    }
-    .currency{
-      margin-right: 3px;
-    }
-  }
-  .selected {
-    margin-top: 30px;
-    &-tours{
-      justify-content: center;
-    }
-  }
 }
 
 /* Extra Small Devices, Phones */
@@ -266,16 +193,6 @@
       max-width: 100%;
       width: 100%;
     }
-  }
-  .cart{
-    &-decrement,&-increment{
-      height: 52px;
-      width: 52px;
-    }
-  }
-  /*______cart_______*/
-  .selected{
-    height: 350px;
   }
 }
 
@@ -310,12 +227,6 @@
     &-img-button{
       max-width: 100%;
       width: 100%;
-    }
-  }
-  /*___collect-tours____*/
-  .callback-form{
-    button{
-      font-size: 20px;
     }
   }
 }
