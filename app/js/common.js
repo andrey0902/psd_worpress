@@ -97,6 +97,10 @@ $(document).ready(function()  {
         theme:"minimal-dark",
         mouseWheel:{ preventDefault:true }
     });
+    $(".desc-all-text").mCustomScrollbar({
+        theme:"minimal-dark",
+        mouseWheel:{ preventDefault:true }
+    });
 
     function findToId(array, element) {
         if(!array.length)
@@ -166,9 +170,23 @@ $(document).ready(function()  {
 
     $('.your-class').slick({
         adaptiveHeight: true,
-        autoplay: true,
+      /*  autoplay: true,*/
         autoplaySpeed: 5000,
         /*centerMode: true,*/
         centerPadding: '100'
     });
+
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    function cutStr(selector) {
+        var text = $('.' + selector).html();
+        console.log(text.length);
+        if(text.length > 270) {
+            text = text.substr(0, 200);
+            text += '...';
+            $('.' + selector).empty().html(text);
+        }
+    }
+    cutStr('review-body');
 });
